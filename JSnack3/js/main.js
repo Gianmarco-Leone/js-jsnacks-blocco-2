@@ -3,16 +3,22 @@
 
 // SVOLGIMENTO:
 // Crea array di numeri interi
-const numbers = [21, 33, 4, 56, 87, 15, 20];
+const numbers = [];
+const myArrayLength = Math.floor(Math.random() * 10) + 1;
+
+for (let i = 0; i < myArrayLength; i++) {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    numbers.push(randomNumber);
+}
 let somma = 0;
 const numberChoosed = document.getElementById("number_array");
+numberChoosed.innerHTML = numbers;
 const additionMessage = document.getElementById("somma");
 
 // Identifica numeri nelle posizioni dispari
 for (let i = 0; i < numbers.length; i++) {
     if (i % 2 != 0) {
         let selectedNumber = numbers[i];
-        numberChoosed.innerHTML += selectedNumber + " ";
         // Somma i numeri
         somma += selectedNumber;
     }
